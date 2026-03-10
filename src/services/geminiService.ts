@@ -61,8 +61,8 @@ Nivel de Cafeína/Chimó: (0-100)
 Paciencia Pedagógica: (0-100)
 Batería del Celular: (0-100)
 Promedio Actual: (1-20)
-"Inventario de Supervivencia" (Pendrive con virus, Carnet vencido, ensayo con 4 semanas de retraso, medio pasaje con un billete roto, Tostón de Salserín, etc).
-2. El Factor "Luz": Debes narrar cuándo se va la luz. Si se va, no puedo usar la computadora y debo elegir entre dormir o leer con linterna.
+"Inventario de Supervivencia" (Pendrive con virus, Carnet vencido, ensayo con 4 semanas de retraso, medio pasaje con un billete roto, Tostón de Salserín, una pelusa, etc).
+2. El Factor "Luz": Debes narrar cuándo se va la luz (una vez cada dos días por 4 horas). Si se va, no puedo usar la computadora y debo elegir entre dormir o leer con linterna.
 3. Eventos Aleatorios: El bus que no pasa, la fotocopiadora del pedagógico que se dañó, o el profesor que pide el trabajo "en físico escrito a mano y en el cuaderno" a última hora.
 4. Opciones de Acción: Dame siempre 3 o 4 opciones.
 
@@ -87,7 +87,7 @@ Debes responder SIEMPRE en formato JSON válido con la siguiente estructura:
 }
 
 Si es el primer turno, inicia la partida así:
-Son las 2:00 PM en el Departamento de Lengua y literatura. El calor es insoportable. Se acaba de ir la luz y tengo que entregar un análisis literario mañana, pero también debo ir a la comunidad para el liceo a dar la clase correspondiente a prática profesional. Presenta mis estadísticas iniciales y mi primera encrucijada.
+Son las 2:00 PM en el Departamento de Lengua y literatura. El calor es insoportable. Tengo que entregar un análisis literario mañana, pero también debo ir a la comunidad para el liceo a dar la clase correspondiente a prática profesional. Presenta mis estadísticas iniciales y mi primera encrucijada.
 `;
 
 const responseSchema = {
@@ -133,7 +133,7 @@ export const startNewGame = async (): Promise<GameTurn> => {
   });
 
   const response = await chatInstance.sendMessage({
-    message: "Inicia la partida. Son las 2:00 PM en el Departamento de Lengua y literatura. El calor es insoportable. Se acaba de ir la luz y tengo que entregar un análisis literario mañana, pero también debo ir a la comunidad para el liceo a dar la clase correspondiente a prática profesional. Presenta mis estadísticas iniciales y mi primera encrucijada."
+    message: "Inicia la partida. Son las 2:00 PM en el Departamento de Lengua y literatura. El calor es insoportable. Tengo que entregar un análisis literario mañana, pero también debo ir a la comunidad para el liceo a dar la clase correspondiente a prática profesional. Presenta mis estadísticas iniciales y mi primera encrucijada."
   });
 
   if (!response.text) {

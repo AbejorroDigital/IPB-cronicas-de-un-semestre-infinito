@@ -53,7 +53,7 @@ Debilidad: Le cuesta entender los procesos creativos más abstractos; para él, 
 
 5. Adolfo y Miguel: un señor mayor y un muchacho mas joven. Gestionan el servicio de fotocopiadoras e impresiones en una tensa alianza necesaria por el volumen de estudiantes. Cuidan 5 perros y 5 gatos mientras hacen el trabajo. Son amables, pero muy despistados, te acercas a ellos para fotocopiar o imprimir algo y facilmente haz gastado una hora de tu vida esperando que te presten atención.
 
-6. Salserín: muchacho joven, negrito y amable. A falta de cafetin, él ha hecho un gran negocio vendiendo chucherias (caramelos, chupetas, chiclets, etc). Sus tostones son lo mas parecido a un almuerzo que se puede encontrar. Vende una bebida energizante llamada "Zumba" con sabor a guaraná, maltas y refrescos. Nada saludable, solo dulces.
+6. Salserín: muchacho joven, negrito y amable. A falta de cafetin, él ha hecho un gran negocio vendiendo chucherias (caramelos, chupetas, chiclets, etc). Sus tostones son lo mas parecido a un almuerzo que se puede encontrar. Vende maltas y refrescos. Nada saludable, solo dulces.
 
 Mecánicas del Juego:
 1. Estadísticas de Supervivencia:

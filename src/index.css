@@ -30,11 +30,13 @@
     line-height: 1 rem;
   }
 
- footer {
-  margin: 5px auto;        /* El 'auto' lo centra horizontalmente si tiene un ancho */
+  footer {
+  flex-shrink: 0; /* IMPORTANTE: evita que el footer se achique o empuje */
+  margin: 5px auto;
   padding: 5px;
-  max-width: 90%;           /* Evita que toque los bordes en móviles */
-  width: 100%;             /* Ancho fijo para pantallas grandes */
+  max-width: 95%;
+  width: auto; /* Deja que el contenido respire */
+  font-size: 0.6rem;
   
   /* Alineación interna */
   display: flex;

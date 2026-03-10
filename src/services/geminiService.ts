@@ -1,20 +1,3 @@
-import OpenAI from 'openai';
-import { GameTurn } from '../types';
-
-// 1. Configuramos la API Key de Groq (asegúrate de cambiar el nombre en tu .env)
-const apiKey = process.env.GROQ_API_KEY; 
-
-if (!apiKey) {
-  console.warn('GROQ_API_KEY is not set. El "Survival Pedagógico" va a colapsar como el sistema eléctrico.');
-}
-
-// 2. Inicializamos el cliente apuntando a los servidores de Groq
-const groq = new OpenAI({
-  apiKey: apiKey || '',
-  dangerouslyAllowBrowser: true, // Solo si estás probando directo en el cliente (frontend)
-  baseURL: "https://api.groq.com/openai/v1" 
-});
-
 import { GoogleGenAI, Type, Chat } from '@google/genai';
 import { GameTurn } from '../types';
 

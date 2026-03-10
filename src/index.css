@@ -1,1 +1,37 @@
 @import "tailwindcss";
+
+@import "tailwindcss";
+
+@theme {
+  /* Redefinimos la escala de texto para que sea más pequeña */
+  --text-xs: 0.65rem;   /* Para notas muy pequeñas */
+  --text-sm: 0.75rem;   /* Para el Inventario y detalles del Estado Vital */
+  --text-base: 0.85rem; /* Para la narrativa principal */
+  --text-lg: 1rem;      /* Para los títulos de las secciones */
+  --text-xl: 1.15rem;   /* Para el título del juego */
+}
+
+@layer base {
+  html {
+    /* Esto hace que 'base' sea más pequeño de entrada */
+    font-size: 14px; 
+    @apply text-slate-200 bg-black;
+  }
+  
+  body {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  /* Clase específica para las tarjetas de opciones */
+  .card-option {
+    @apply text-sm p-3 border border-slate-700 hover:border-emerald-500 transition-colors;
+    line-height: 1.2rem;
+  }
+
+  /* Ajuste para el panel lateral de estadísticas */
+  .stats-panel {
+    @apply text-xs uppercase tracking-wider font-bold;
+  }
+}

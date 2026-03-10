@@ -38,5 +38,6 @@
   /* Ajuste para el panel lateral de estadísticas */
   .stats-panel {
     @apply text-xs uppercase tracking-wider font-bold;
+    @apply flex flex-col md:flex-row;
   }
 }

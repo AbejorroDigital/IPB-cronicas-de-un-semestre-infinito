@@ -150,7 +150,7 @@ export function GameUI() {
                     <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/0 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="flex items-start gap-3 relative z-10">
                       <span className="font-mono text-emerald-500 font-bold mt-0.5">{idx + 1}.</span>
-                      <span className="text-zinc-300 group-hover:text-emerald-100 transition-colors">{opcion}</span>
+                      <span className="text-zinc-200 group-hover:text-emerald-100 transition-colors">{opcion}</span>
                     </div>
                   </button>
                 ))}

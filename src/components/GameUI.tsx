@@ -56,7 +56,6 @@ export function GameUI() {
       setCurrentTurn(nextTurn);
     } catch (err: any) {
       setError(err.message || 'Error al procesar tu elección.');
-      // Revert state if possible or show error
     } finally {
       setIsLoading(false);
     }
@@ -73,17 +72,17 @@ export function GameUI() {
       )}
 
       {/* Main Game Area */}
-      <div className="flex-1 flex flex-col relative h-full">
-        {/* Header */}
-        <header className="bg-zinc-900/80 backdrop-blur-md border-b border-zinc-800 p-4 sticky top-0 z-10">
+      <div className="flex-1 flex flex-col min-h-0 relative">
+        {/* Header - Fixed height via flex-shrink-0 */}
+        <header className="flex-shrink-0 bg-zinc-900/80 backdrop-blur-md border-b border-zinc-800 p-4 z-10">
           <h1 className="text-2xl font-bold text-emerald-400 font-mono tracking-tighter">
             IPB: Crónicas del Semestre Infinito
           </h1>
           <p className="text-zinc-400 text-sm">Misión: Survival Pedagógico</p>
         </header>
 
-        {/* Narrative History */}
-        <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 md:p-8 space-y-6 scroll-smooth">
+        {/* Narrative History - Takes remaining space and scrolls */}
+        <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 md:p-8 space-y-6 scroll-smooth min-h-0">
           {history.map((msg, idx) => (
             <motion.div
               key={idx}
@@ -130,35 +129,39 @@ export function GameUI() {
           )}
         </div>
 
-        {/* Choices Area */}
-        <AnimatePresence>
-          {currentTurn && !isLoading && (
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 50 }}
-              className="bg-zinc-900 border-t border-zinc-800 p-4 md:p-6"
-            >
-              <h3 className="text-sm font-mono text-zinc-400 mb-4 uppercase tracking-wider">¿Qué vas a hacer?</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {currentTurn.opciones.map((opcion, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => handleChoice(opcion)}
-                    className="group relative text-left p-4 rounded-xl bg-zinc-800/50 border border-zinc-700 hover:bg-emerald-900/30 hover:border-emerald-500/50 transition-all duration-200 overflow-hidden"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/0 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="flex items-start gap-3 relative z-10">
-                      <span className="font-mono text-emerald-500 font-bold mt-0.5">{idx + 1}.</span>
-                      <span className="text-zinc-200 group-hover:text-emerald-100 transition-colors">{opcion}</span>
-                    </div>
-                  </button>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-        <footer>Desarrollado por 🐝 Abejorro Digital</footer>
+        {/* Fixed Bottom Area: Choices + Footer */}
+        <div className="flex-shrink-0 bg-zinc-950 border-t border-zinc-800">
+          <AnimatePresence>
+            {currentTurn && !isLoading && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                className="p-4 md:p-6 bg-zinc-900"
+              >
+                <h3 className="text-sm font-mono text-zinc-400 mb-4 uppercase tracking-wider">¿Qué vas a hacer?</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {currentTurn.opciones.map((opcion, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handleChoice(opcion)}
+                      className="group relative text-left p-4 rounded-xl bg-zinc-800/50 border border-zinc-700 hover:bg-emerald-900/30 hover:border-emerald-500/50 transition-all duration-200 overflow-hidden"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/0 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div className="flex items-start gap-3 relative z-10">
+                        <span className="font-mono text-emerald-500 font-bold mt-0.5">{idx + 1}.</span>
+                        <span className="text-zinc-200 group-hover:text-emerald-100 transition-colors">{opcion}</span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+          <footer className="text-[10px] opacity-50 hover:opacity-100 transition-opacity p-2 text-center">
+            Desarrollado por 🐝 Abejorro Digital
+          </footer>
+        </div>
       </div>
     </div>
   );

@@ -30,10 +30,35 @@
     line-height: 1.2rem;
   }
 
-  footer {
-    margin:10px;
-    padding:10px;
-  }
+ footer {
+  margin: 20px auto;        /* El 'auto' lo centra horizontalmente si tiene un ancho */
+  padding: 15px;
+  max-width: 90%;           /* Evita que toque los bordes en móviles */
+  width: 600px;             /* Ancho fijo para pantallas grandes */
+  
+  /* Alineación interna */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* Efectos de Estilo */
+  background: rgba(255, 255, 255, 0.1); /* Fondo traslúcido */
+  backdrop-filter: blur(10px);          /* Desenfoque de fondo */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;                  /* Bordes redondeados modernos */
+  
+  /* Sombra sutil para dar profundidad */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  
+  /* Transición para cuando pases el mouse */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+footer:hover {
+  transform: translateY(-5px); /* Pequeño salto al pasar el mouse */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
 
   /* Ajuste para el panel lateral de estadísticas */
   .stats-panel {

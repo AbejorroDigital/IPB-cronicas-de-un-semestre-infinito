@@ -158,6 +158,7 @@ export function GameUI() {
             </motion.div>
           )}
         </AnimatePresence>
+        <footer>Desarrollado por 🐝 Abejorro Digital</footer>
       </div>
     </div>
   );

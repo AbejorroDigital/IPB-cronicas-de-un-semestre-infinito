@@ -26,8 +26,8 @@
 @layer components {
   /* Clase específica para las tarjetas de opciones */
   .card-option {
-    @apply text-sm p-3 border border-slate-700 hover:border-emerald-500 transition-colors;
-    line-height: 1.2rem;
+    @apply text-sm p-2 border border-slate-700 hover:border-emerald-500 transition-colors;
+    line-height: 1 rem;
   }
 
  footer {

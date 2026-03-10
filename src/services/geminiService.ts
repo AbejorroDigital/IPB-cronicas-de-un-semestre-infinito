@@ -123,7 +123,7 @@ let chatInstance: Chat | null = null;
 
 export const startNewGame = async (): Promise<GameTurn> => {
   chatInstance = ai.chats.create({
-    model: "gemini-3.1-pro-preview",
+    model: "gemini-2.5",
     config: {
       systemInstruction: SYSTEM_PROMPT,
       responseMimeType: "application/json",

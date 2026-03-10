@@ -26,15 +26,15 @@
 @layer components {
   /* Clase específica para las tarjetas de opciones */
   .card-option {
-    @apply text-sm p-2 border border-slate-700 hover:border-emerald-500 transition-colors;
+    @apply text-xs p-2 border border-slate-700 hover:border-emerald-500 transition-colors;
     line-height: 1 rem;
   }
 
  footer {
-  margin: 20px auto;        /* El 'auto' lo centra horizontalmente si tiene un ancho */
-  padding: 15px;
+  margin: 5px auto;        /* El 'auto' lo centra horizontalmente si tiene un ancho */
+  padding: 5px;
   max-width: 90%;           /* Evita que toque los bordes en móviles */
-  width: 600px;             /* Ancho fijo para pantallas grandes */
+  width: 100%;             /* Ancho fijo para pantallas grandes */
   
   /* Alineación interna */
   display: flex;
@@ -46,7 +46,7 @@
   background: rgba(255, 255, 255, 0.1); /* Fondo traslúcido */
   backdrop-filter: blur(10px);          /* Desenfoque de fondo */
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;                  /* Bordes redondeados modernos */
+  border-radius: 5px;                  /* Bordes redondeados modernos */
   
   /* Sombra sutil para dar profundidad */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
